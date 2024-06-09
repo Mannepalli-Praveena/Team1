@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNPSC</title>
+    <link rel="icon" type="images/x-icon" href="images/logo-removebg-preview.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="loginsignup.js" defer></script>
+    <script src ="menu.js" defer></script>
+</head>
+<body class="spec">
+    <!--Navigation Bar-->
+    <nav>
+        <img data-aos="zoom-in" data-aos-delay="400" src="images/sals.jpg" alt="">
+        
+        <div data-aos="fade-up-right" data-aos-delay="400"  class="navigation">
+            <ul>
+                <i id="menu-close" class="fa-solid fa-xmark"></i>
+                <li><a href="index.html">Home</a></li>
+                <li><a  href="about.html">About</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Information</a>
+                    <div class="dropdown-content">
+                        <a href="learn.html"> About TNPSC</a>
+                      <a href="apply.html">Apply Online</a>
+                      <a href="hall.html">Hall Ticket Download</a>
+                      <a href="faq.html">FAQ</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="active" href="login.html">Login</a></li>
+            </ul>
+            <img id="menu-btn" src="images/menu.jpg" alt="">
+        </div>
+    </nav>
+    <br>
+    <div data-aos="fade-down" data-aos-delay="400" class="signup-container">
+        <div data-aos="fade-down" data-aos-delay="400" class="signup-form-wrapper">
+            <h2>Sign Up</h2>
+            <form action="#">
+                <div class="signup-form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="signup-form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="signup-form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="signup-form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="signup-form-group">
+                    <button type="submit" >Sign Up</button>
+                </div>
+            </form>
+        </div>
+        <div class="login-option">
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+        <br>
+        <div class="or">
+            <p>Or</p>
+        </div>
+        <br>
+        <div id="my-signin2"></div>
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
